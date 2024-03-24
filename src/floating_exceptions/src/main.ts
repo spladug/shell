@@ -95,13 +95,13 @@ export class MainView implements View {
         this.list = Gtk.ListBox.new();
         this.list.set_selection_mode(Gtk.SelectionMode.NONE);
         this.list.set_header_func(list_header_func);
-        this.list.add(exceptions);
+        this.list.add_child(exceptions);
 
         let scroller = new Gtk.ScrolledWindow();
         scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroller.set_propagate_natural_width(true);
         scroller.set_propagate_natural_height(true);
-        scroller.add(this.list);
+        scroller.add_child(this.list);
 
         let list_frame = Gtk.Frame.new(null);
         list_frame.add(scroller);
